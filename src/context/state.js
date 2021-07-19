@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import AppReducer from './reducer';
+import { AppReducer } from './reducer';
 
 //Initial State
 const initialState = {
@@ -15,7 +15,7 @@ export const GlobalContext = createContext(initialState);
 
 //Provider Component : To provide access to all our components to our state.
 export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(AppReducer, initialState);
 
     /*With the help of the below return statement we will be able to pass the transactions which is 
     part of our state to all our childern components using useContext */
