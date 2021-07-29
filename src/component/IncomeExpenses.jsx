@@ -8,7 +8,7 @@ export const IncomeExpenses = () => {
   const income = amount.filter(amount => amount > 0);
   const expense = amount.filter(amount => amount < 0);
   const income_amt = income.reduce((inc, item) => (inc += item), 0).toFixed(2);
-  const income_exp = expense.reduce((inc, item) => (inc += item), 0).toFixed(2);
+  const income_exp = (expense.reduce((inc, item) => (inc += item), 0) * -1 ).toFixed(2);
 
     return (
         <div className="inc-exp-container">
